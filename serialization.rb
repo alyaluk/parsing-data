@@ -1,8 +1,9 @@
 require 'csv'
 
 class Person
-  # Look at the above CSV file
-  # What attributes should a Person object have?
+  attr_reader :id, :first_name, :last_name, :email, :phone, :date_created
+  def initialize
+  end
 end
 
 class PersonParser
@@ -21,6 +22,7 @@ class PersonParser
     # We've never called people before, now parse the CSV file
     # and return an Array of Person objects here.  Save the
     # Array in the @people instance variable.
+    @people = CSV.read(@file)
   end
 end
 
